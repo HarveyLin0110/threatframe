@@ -8,6 +8,7 @@
   },
   "homepage": "https://github.com/HarveyLin0110/threatframe#readme",
   "repository": "https://github.com/HarveyLin0110/threatframe",
+  "license": "MIT",
   "keywords": [
     "threat-modeling",
     "product-security",

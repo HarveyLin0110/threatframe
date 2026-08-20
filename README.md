@@ -54,3 +54,7 @@ scripts/                          Installation helpers
 ## Developer
 
 ThreatFrame AI is developed and maintained by [Harvey Lin](https://github.com/HarveyLin0110).
+
+## License
+
+ThreatFrame AI is licensed under the [MIT License](LICENSE).
