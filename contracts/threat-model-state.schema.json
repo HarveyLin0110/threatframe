@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:threatframe:schema:threat-model-state:1.0.0",
+  "title": "ThreatFrame State",
+  "type": "object",
+  "required": ["schemaVersion", "project", "evidenceStatus", "dfd", "threats", "risks"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "project": {
+      "type": "object",
+      "required": ["name", "mode"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": ["string", "null"] },
+        "mode": { "enum": ["product", "feature", "delta", "review"] },
+        "profiles": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      },
+      "additionalProperties": false
+    },
+    "evidenceStatus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "statement"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^EV-[0-9]{3}$" },
+          "status": { "enum": ["FACT", "ASSUMPTION", "UNKNOWN", "INFERENCE", "RECOMMENDATION"] },
+          "statement": { "type": "string" },
+          "source": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "dfd": {
+      "type": "object",
+      "required": ["externalEntities", "processes", "dataStores", "dataFlows", "trustBoundaries"],
+      "properties": {
+        "externalEntities": { "$ref": "#/$defs/idNameList" },
+        "processes": { "$ref": "#/$defs/idNameList" },
+        "dataStores": { "$ref": "#/$defs/idNameList" },
+        "trustBoundaries": { "$ref": "#/$defs/idNameList" },
+        "dataFlows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "source", "destination"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^DF-[0-9]{3}$" },
+              "name": { "type": "string" },
+              "source": { "type": "string" },
+              "destination": { "type": "string" },
+              "protocol": { "type": ["string", "null"] },
+              "crossesTrustBoundary": { "type": "array", "items": { "type": "string" } }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "threats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "stride", "preconditions", "scenario", "confidence"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^T-[0-9]{3}$" },
+          "title": { "type": "string" },
+          "stride": { "type": "array", "items": { "enum": ["S", "T", "R", "I", "D", "E"] }, "uniqueItems": true },
+          "relatedElements": { "type": "array", "items": { "type": "string" } },
+          "preconditions": { "type": "array", "items": { "type": "string" } },
+          "scenario": { "type": "string" },
+          "confidence": { "enum": ["high", "medium", "low"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "threatIds", "status"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^R-[0-9]{3}$" },
+          "threatIds": { "type": "array", "items": { "type": "string", "pattern": "^T-[0-9]{3}$" }, "minItems": 1 },
+          "likelihood": { "type": ["integer", "null"], "minimum": 1, "maximum": 5 },
+          "impact": { "type": ["integer", "null"], "minimum": 1, "maximum": 5 },
+          "status": { "enum": ["open", "treated", "accepted", "closed", "incomplete"] },
+          "mitigationIds": { "type": "array", "items": { "type": "string", "pattern": "^M-[0-9]{3}$" } },
+          "requirementIds": { "type": "array", "items": { "type": "string", "pattern": "^SR-[0-9]{3}$" } },
+          "verificationIds": { "type": "array", "items": { "type": "string", "pattern": "^V-[0-9]{3}$" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "idNameList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": { "id": { "type": "string" }, "name": { "type": "string" } },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

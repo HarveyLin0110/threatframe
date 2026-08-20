@@ -1,0 +1,6 @@
+interface:
+  display_name: "ThreatFrame AI · Threat Analysis"
+  short_description: "Identify STRIDE threats, scenarios, and attack paths"
+  default_prompt: "Use $threatframe-threat-analysis to identify evidence-aware threats from this DFD or attack surface."
+policy:
+  allow_implicit_invocation: true

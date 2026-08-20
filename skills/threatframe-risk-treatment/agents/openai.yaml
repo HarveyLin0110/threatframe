@@ -1,0 +1,6 @@
+interface:
+  display_name: "ThreatFrame AI · Risk Treatment"
+  short_description: "Score, treat, specify, and verify product risks"
+  default_prompt: "Use $threatframe-risk-treatment to turn this threat register into managed risks and engineering actions."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "ThreatFrame AI · Complete Workflow"
+  short_description: "Complete evidence-aware product threat modeling workflow"
+  default_prompt: "Use $threatframe-workflow to create a complete product threat model from the supplied product evidence."
+policy:
+  allow_implicit_invocation: true

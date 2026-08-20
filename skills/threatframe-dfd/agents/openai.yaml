@@ -1,0 +1,6 @@
+interface:
+  display_name: "ThreatFrame AI · DFD Modeling"
+  short_description: "Create security DFDs with flows and trust boundaries"
+  default_prompt: "Use $threatframe-dfd to build a security-focused DFD from this system description."
+policy:
+  allow_implicit_invocation: true

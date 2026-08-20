@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>Product Threat Model — {{PRODUCT}}</title>
+<style>
+body{font-family:Arial,"Microsoft JhengHei",sans-serif;line-height:1.5;margin:32px;color:#172B4D}
+h1{border-bottom:2px solid #DFE1E6;padding-bottom:8px}
+h2{margin-top:32px;border-bottom:1px solid #DFE1E6;padding-bottom:5px}
+table{border-collapse:collapse;width:100%;margin:12px 0 20px}
+th,td{border:1px solid #C1C7D0;padding:8px;vertical-align:top;text-align:left}
+th{background:#F4F5F7}
+.note{border-left:4px solid #6554C0;background:#F4F5F7;padding:12px}
+</style>
+</head>
+<body>
+<h1>Product Threat Model — {{PRODUCT}}</h1>
+<div class="note"><strong>Methodology:</strong> DFD + STRIDE + Attack Path</div>
+
+<h2>0. Analysis Information</h2>
+<table><tr><th>Item</th><th>Value</th></tr>
+<tr><td>Product</td><td>{{PRODUCT}}</td></tr>
+<tr><td>Version</td><td>{{VERSION}}</td></tr>
+<tr><td>Mode</td><td>{{MODE}}</td></tr>
+<tr><td>Profiles</td><td>{{PROFILES}}</td></tr></table>
+
+<h2>1. System Context / DFD</h2>
+<svg viewBox="0 0 1000 430" width="100%" role="img" aria-label="Security DFD">
+  <rect x="18" y="18" width="964" height="394" fill="#fff" stroke="#ff5630" stroke-width="2" stroke-dasharray="9 6"/>
+  <text x="28" y="42" font-family="Arial" font-size="16" fill="#de350b">TB-001 — Device Trust Boundary</text>
+  <rect x="820" y="90" width="145" height="70" fill="#fff" stroke="#172B4D"/>
+  <text x="840" y="120" font-family="Arial" font-size="14">EE-001</text><text x="840" y="142" font-family="Arial" font-size="14">Administrator</text>
+  <ellipse cx="620" cy="125" rx="72" ry="48" fill="#fff" stroke="#172B4D"/>
+  <text x="588" y="120" font-family="Arial" font-size="14">P-001</text><text x="574" y="141" font-family="Arial" font-size="14">HTTPS Server</text>
+  <line x1="820" y1="125" x2="694" y2="125" stroke="#172B4D" stroke-width="2"/><polygon points="694,125 706,119 706,131" fill="#172B4D"/>
+  <text x="720" y="112" font-family="Arial" font-size="13">DF-001 HTTPS</text>
+  <ellipse cx="400" cy="220" rx="75" ry="50" fill="#fff" stroke="#172B4D"/>
+  <text x="370" y="215" font-family="Arial" font-size="14">P-002</text><text x="351" y="237" font-family="Arial" font-size="14">OS / Mgmt Process</text>
+  <line x1="130" y1="185" x2="270" y2="185" stroke="#172B4D"/><line x1="130" y1="245" x2="270" y2="245" stroke="#172B4D"/>
+  <text x="150" y="215" font-family="Arial" font-size="14">DS-001</text><text x="145" y="236" font-family="Arial" font-size="14">Config Store</text>
+</svg>
+
+<h2>2. Assets & Attack Surface</h2>
+<table><tr><th>Interface</th><th>Exposure</th><th>Default State</th><th>Trust Boundary</th><th>Existing Control</th><th>Security Note</th></tr></table>
+
+<h2>3. Threat Analysis Register</h2>
+<table><tr><th>Threat ID</th><th>Asset / Interface</th><th>STRIDE</th><th>Threat</th><th>Risk</th><th>Action</th><th>Status</th></tr></table>
+
+<h2>4. Priority Threat Details</h2>
+<h2>5. Risk Register</h2>
+<h2>6. Treatment & Engineering Traceability</h2>
+<h2>7. Defense-in-Depth Assessment</h2>
+<h2>8. Open Issues / Evidence Needed</h2>
+<h2>9. Review & Risk Acceptance</h2>
+<h2>10. Optional Knowledge / Compliance Mappings</h2>
+<h2>11. Traceability Summary</h2>
+</body>
+</html>

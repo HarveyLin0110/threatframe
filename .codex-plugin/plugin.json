@@ -1,0 +1,22 @@
+{
+  "name": "threatframe",
+  "version": "1.0.0",
+  "description": "Modular product-security threat modeling workflows for DFD, STRIDE, risk treatment, and reporting.",
+  "author": { "name": "ThreatFrame AI" },
+  "keywords": ["threat-modeling", "product-security", "stride", "risk-analysis"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "ThreatFrame AI",
+    "shortDescription": "Modular product-security threat modeling workflows",
+    "longDescription": "Build complete or stage-specific product threat models with evidence-aware DFD, STRIDE, risk treatment, engineering traceability, and Confluence-ready reporting workflows.",
+    "developerName": "ThreatFrame AI",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Create a complete product threat model from this product information.",
+      "Build a security DFD for this system.",
+      "Turn these threats into risks, requirements, and verification cases."
+    ],
+    "brandColor": "#B42318"
+  }
+}

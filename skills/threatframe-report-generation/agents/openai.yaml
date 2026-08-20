@@ -1,0 +1,6 @@
+interface:
+  display_name: "ThreatFrame AI · Report Generation"
+  short_description: "Generate Confluence-ready threat model reports"
+  default_prompt: "Use $threatframe-report-generation to turn this existing threat model into a Confluence-ready HTML report."
+policy:
+  allow_implicit_invocation: true
