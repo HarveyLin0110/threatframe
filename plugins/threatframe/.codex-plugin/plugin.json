@@ -2,16 +2,27 @@
   "name": "threatframe",
   "version": "1.0.0",
   "description": "Modular product-security threat modeling workflows for DFD, STRIDE, risk treatment, and reporting.",
-  "author": { "name": "ThreatFrame AI" },
-  "keywords": ["threat-modeling", "product-security", "stride", "risk-analysis"],
+  "author": {
+    "name": "Harvey Lin",
+    "url": "https://github.com/HarveyLin0110"
+  },
+  "homepage": "https://github.com/HarveyLin0110/threatframe#readme",
+  "repository": "https://github.com/HarveyLin0110/threatframe",
+  "keywords": [
+    "threat-modeling",
+    "product-security",
+    "stride",
+    "risk-analysis"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "ThreatFrame AI",
     "shortDescription": "Modular product-security threat modeling workflows",
     "longDescription": "Build complete or stage-specific product threat models with evidence-aware DFD, STRIDE, risk treatment, engineering traceability, and Confluence-ready reporting workflows.",
-    "developerName": "ThreatFrame AI",
+    "developerName": "Harvey Lin",
     "category": "Developer Tools",
     "capabilities": [],
+    "websiteURL": "https://github.com/HarveyLin0110/threatframe",
     "defaultPrompt": [
       "Create a complete product threat model from this product information.",
       "Build a security DFD for this system.",

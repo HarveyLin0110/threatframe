@@ -1,0 +1,20 @@
+{
+  "name": "threatframe",
+  "interface": {
+    "displayName": "ThreatFrame AI"
+  },
+  "plugins": [
+    {
+      "name": "threatframe",
+      "source": {
+        "source": "local",
+        "path": "./plugins/threatframe"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
